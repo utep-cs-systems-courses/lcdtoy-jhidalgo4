@@ -2,11 +2,12 @@
  *  \brief A simple demo that draws a string and square
  */
 
+/*
 #include <libTimer.h>
 #include "lcdutils.h"
 #include "lcddraw.h"
 
-/** Initializes everything, clears the screen, draws "hello" and a square */
+// Initializes everything, clears the screen, draws "hello" and a square
 int
 main()
 {
@@ -21,3 +22,5 @@ main()
   fillRectangle(30,30, 60, 60, COLOR_ORANGE);
   
 }
+
+*/
