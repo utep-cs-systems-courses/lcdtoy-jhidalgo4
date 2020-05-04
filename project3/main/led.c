@@ -38,7 +38,7 @@ void switched_light(){
   if (new_green_on == green_on && new_red_on == red_on){
     red_on = new_red_on;
     green_on = new_green_on;
-    led_changed = 0;
+    led_changed = 1;
   }
 }
 

@@ -58,28 +58,28 @@ switch_interrupt_handler(){
   
   if(switch_state_down1){
     curState = 1;
-    newX = newX - 2;
+    newX = newX - 1;
     checkShape(backColor, drawColor); //pass background color and drawing color
     play_noise();
   }
   
   else if (switch_state_down2){
     curState = 2;
-    newY = newY -2;
+    newY = newY -1;
     checkShape(backColor, drawColor);
     play_noise();
   }
   
   else if (switch_state_down3){
     curState = 3;
-    newY = newY +2;
+    newY = newY +1;
     checkShape(backColor, drawColor);
     play_noise();
   }
   
   else if (switch_state_down4){
     curState = 4;
-    newX = newX + 2;
+    newX = newX + 1;
     checkShape(backColor, drawColor); //pass background color & drawing color
     play_noise();
   }
