@@ -14,10 +14,11 @@ void checkShape(int colorP, int colorN){
   if (curX != newX || curY != newY){
     
     // here change method to fit current shape inside "switches.c"
-    drawShape2(curX, curY, colorP); //easrse old
-    drawShape2(newX, newY, colorN); //update new
+    drawShape4(curX, curY, colorP); //easrse old
+   
     curX = newX;
     curY = newY;
+    drawShape4(newX, newY, colorN); //update new
   }
 }
 
@@ -26,6 +27,7 @@ void drawShape1(){
   drawString5x7(5,5, "Joaquin", COLOR_WHITE, COLOR_NAVY);
 }
 
+//Triangle
 void drawShape2(char curX, char curY, int colorP){
   //fillRectangle(curX,curY, 60, 60, COLOR_RED);
   for(int c =0; c<40; c++){
@@ -37,12 +39,65 @@ void drawShape2(char curX, char curY, int colorP){
   }    
 }
 
-void drawShape3(){ 
-  
+// DOWN-WARD ARROW
+void drawShape3(char curX, char curY, int colorP){
+  //bottom pointer of arrow
+  for(int c =0; c<40; c++){
+    if(c<= 40/2){
+      for(int r =0; r<c;r++){
+	drawPixel(c+curX, r+curY, colorP);
+      }
+    }
+    else{
+      for(int r = 0;r< 40-c;r++ ){
+	drawPixel(c+curX, r+curY, colorP);
+      }
+    }
+  }
+
+  //top part of Arrow (square)
+  for(int i=0;i<20;i++){
+    for(int j=0;j<10;j++){
+      drawPixel(i+curX+10, curY-j, colorP);
+    }
+  }
 }
 
-void drawShape4(){ 
-  
+
+//DIAMOND
+void drawShape4(char curX, char curY, int colorP){
+  //bottom part of DIAMOND
+  for(int c =0; c<40; c++){
+    if(c<= 40/2){
+      for(int r =0; r<c;r++){
+	drawPixel(c+curX, r+curY, colorP);
+      }
+    }
+    else{
+      for(int r = 0;r< 40-c;r++ ){
+	drawPixel(c+curX, r+curY, colorP);
+      }
+    }
+  }
+
+  //top part of Diamond (trapizoid)
+  for(int i=0;i<20;i++){
+    for(int j=0;j<10;j++){
+      drawPixel(i+curX+10, curY-j, colorP);
+    }
+  }
+
+  for(int i =0; i<10;i++){
+    for(int j =0;j<i;j++){
+      drawPixel(i+curX, curY-j, colorP);
+    }
+  }
+
+  for(int i =0; i<10;i++){
+    for(int j=9-i; j>=0;j--){
+      drawPixel(i+curX+30, curY-j, colorP);
+    }
+  }
 }
 
 void diamondSqu(char curX, char curY, int colorP){

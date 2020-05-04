@@ -21,7 +21,10 @@ __interrupt_vec(PORT2_VECTOR) Port_2(){
 void
 __interrupt_vec(WDT_VECTOR) WDT(){  // 250 interrupts / sec
   static int blink_count = 0;
-
+  //if(++blink_count == 5){
+    //stateMachine();
+    //blink_count = 0;
+    //}
   stateMachine();
 }
   

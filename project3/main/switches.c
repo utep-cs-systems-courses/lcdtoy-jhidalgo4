@@ -8,6 +8,7 @@
 #include "lcddraw.h"
 
 unsigned char curState = 0;
+
 char switch_state_down1, switch_state_down2, switch_state_down3, switch_state_down4;
 char switch_state_down, switch_state_changed;
 char curX = 30;
@@ -15,7 +16,7 @@ char curY = 30;
 char newX = 30;
 char newY = 30;
 int backColor = COLOR_BLACK;
-int drawColor = COLOR_GREEN;
+int drawColor = COLOR_RED;
 
 
 static char
@@ -51,7 +52,7 @@ switch_interrupt_handler(){
 
   //these methods connect to lcddemo.c
   //diamondSqu(curX, curY, drawColor);
-  drawShape2(curX, curY, drawColor);
+  drawShape4(curX, curY, drawColor);
 
 
   
@@ -62,21 +63,21 @@ switch_interrupt_handler(){
     play_noise();
   }
   
-  if (switch_state_down2){
+  else if (switch_state_down2){
     curState = 2;
     newY = newY -2;
     checkShape(backColor, drawColor);
     play_noise();
   }
   
-  if (switch_state_down3){
+  else if (switch_state_down3){
     curState = 3;
     newY = newY +2;
     checkShape(backColor, drawColor);
     play_noise();
   }
   
-  if (switch_state_down4){
+  else if (switch_state_down4){
     curState = 4;
     newX = newX + 2;
     checkShape(backColor, drawColor); //pass background color & drawing color

@@ -15,9 +15,9 @@ void drawShape1();
 
 void drawShape2(char curX, char curY, int colorP);
 
-void drawShape3();
+void drawShape3(char curX, char curY, int colorP);
 
-void drawShape4();
+void drawShape4(char curX, char curY, int colorP);
 
 void checkShape(int colorP, int colorN);
 
