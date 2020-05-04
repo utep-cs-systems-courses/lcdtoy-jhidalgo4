@@ -16,7 +16,7 @@ char curY = 30;
 char newX = 30;
 char newY = 30;
 int backColor = COLOR_BLACK;
-int drawColor = COLOR_RED;
+int drawColor = COLOR_BLUE;
 
 
 static char
@@ -52,34 +52,34 @@ switch_interrupt_handler(){
 
   //these methods connect to lcddemo.c
   //diamondSqu(curX, curY, drawColor);
-  drawShape4(curX, curY, drawColor);
+  drawShape4(newX, newY, drawColor);
 
 
   
   if(switch_state_down1){
     curState = 1;
-    newX = newX - 1;
+    newX = newX - 3;
     checkShape(backColor, drawColor); //pass background color and drawing color
     play_noise();
   }
   
   else if (switch_state_down2){
     curState = 2;
-    newY = newY -1;
+    newY = newY -3;
     checkShape(backColor, drawColor);
     play_noise();
   }
   
   else if (switch_state_down3){
     curState = 3;
-    newY = newY +1;
+    newY = newY +3;
     checkShape(backColor, drawColor);
     play_noise();
   }
   
   else if (switch_state_down4){
     curState = 4;
-    newX = newX + 1;
+    newX = newX + 3;
     checkShape(backColor, drawColor); //pass background color & drawing color
     play_noise();
   }
